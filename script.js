@@ -132,7 +132,7 @@ function displayResults(analysis) {
         resultsTitle.textContent = '分析結果';
     }
     
-    // 脳機能グラフを描画（ブルー系）
+    // 脳機能グラフを描画（オレンジ系）
     const brainCtx = document.getElementById('brainChart').getContext('2d');
     const brainData = {
         labels: [
@@ -153,21 +153,21 @@ function displayResults(analysis) {
                 analysis.brainScores.senses,
                 analysis.brainScores.habits
             ],
-            backgroundColor: 'rgba(59, 130, 246, 0.15)',
-            borderColor: 'rgba(59, 130, 246, 0.8)',
+            backgroundColor: 'rgba(251, 146, 60, 0.15)',
+            borderColor: 'rgba(251, 146, 60, 0.8)',
             borderWidth: 3,
-            pointBackgroundColor: 'rgba(59, 130, 246, 1)',
+            pointBackgroundColor: 'rgba(251, 146, 60, 1)',
             pointBorderColor: '#fff',
             pointBorderWidth: 2,
             pointRadius: 5,
             pointHoverBackgroundColor: '#fff',
-            pointHoverBorderColor: 'rgba(59, 130, 246, 1)',
+            pointHoverBorderColor: 'rgba(251, 146, 60, 1)',
             pointHoverBorderWidth: 3,
             pointHoverRadius: 7
         }]
     };
 
-    // 社会的能力グラフを描画（グリーン系）
+    // 社会的能力グラフを描画（抹茶色）
     const socialCtx = document.getElementById('socialChart').getContext('2d');
     const socialData = {
         labels: [
@@ -188,15 +188,15 @@ function displayResults(analysis) {
                 analysis.socialScores.empathy,
                 analysis.socialScores.mental
             ],
-            backgroundColor: 'rgba(34, 197, 94, 0.15)',
-            borderColor: 'rgba(34, 197, 94, 0.8)',
+            backgroundColor: 'rgba(76, 140, 74, 0.15)',
+            borderColor: 'rgba(76, 140, 74, 0.8)',
             borderWidth: 3,
-            pointBackgroundColor: 'rgba(34, 197, 94, 1)',
+            pointBackgroundColor: 'rgba(76, 140, 74, 1)',
             pointBorderColor: '#fff',
             pointBorderWidth: 2,
             pointRadius: 5,
             pointHoverBackgroundColor: '#fff',
-            pointHoverBorderColor: 'rgba(34, 197, 94, 1)',
+            pointHoverBorderColor: 'rgba(76, 140, 74, 1)',
             pointHoverBorderWidth: 3,
             pointHoverRadius: 7
         }]
@@ -279,7 +279,7 @@ function downloadCharts() {
     ctx.font = 'bold 24px Arial';
     ctx.fillStyle = '#1f2937';
     ctx.textAlign = 'center';
-    const title = currentUserName ? `${currentUserName}の分析結果` : 'Brain Function & Social Humanity Hexagraph';
+    const title = currentUserName ? `${currentUserName}さんの分析結果` : 'Brain Function & Social Humanity Hexagraph';
     ctx.fillText(title, tempCanvas.width / 2, 40);
     
     // 両方のチャートを並べて描画
