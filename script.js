@@ -127,7 +127,7 @@ function displayResults(analysis) {
     // 結果タイトルを名前付きに更新
     const resultsTitle = document.getElementById('resultsTitle');
     if (currentUserName) {
-        resultsTitle.textContent = `${currentUserName}の分析結果`;
+        resultsTitle.textContent = `${currentUserName}さんの分析結果`;
     } else {
         resultsTitle.textContent = '分析結果';
     }
