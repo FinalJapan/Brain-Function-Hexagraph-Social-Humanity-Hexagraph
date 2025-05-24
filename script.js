@@ -132,7 +132,7 @@ function displayResults(analysis) {
         resultsTitle.textContent = '分析結果';
     }
     
-    // 脳機能グラフを描画
+    // 脳機能グラフを描画（ブルー系）
     const brainCtx = document.getElementById('brainChart').getContext('2d');
     const brainData = {
         labels: [
@@ -153,17 +153,21 @@ function displayResults(analysis) {
                 analysis.brainScores.senses,
                 analysis.brainScores.habits
             ],
-            backgroundColor: 'rgba(99, 102, 241, 0.2)',
-            borderColor: 'rgba(99, 102, 241, 1)',
-            borderWidth: 2,
-            pointBackgroundColor: 'rgba(99, 102, 241, 1)',
+            backgroundColor: 'rgba(59, 130, 246, 0.15)',
+            borderColor: 'rgba(59, 130, 246, 0.8)',
+            borderWidth: 3,
+            pointBackgroundColor: 'rgba(59, 130, 246, 1)',
             pointBorderColor: '#fff',
+            pointBorderWidth: 2,
+            pointRadius: 5,
             pointHoverBackgroundColor: '#fff',
-            pointHoverBorderColor: 'rgba(99, 102, 241, 1)'
+            pointHoverBorderColor: 'rgba(59, 130, 246, 1)',
+            pointHoverBorderWidth: 3,
+            pointHoverRadius: 7
         }]
     };
 
-    // 社会的能力グラフを描画
+    // 社会的能力グラフを描画（グリーン系）
     const socialCtx = document.getElementById('socialChart').getContext('2d');
     const socialData = {
         labels: [
@@ -184,13 +188,17 @@ function displayResults(analysis) {
                 analysis.socialScores.empathy,
                 analysis.socialScores.mental
             ],
-            backgroundColor: 'rgba(139, 92, 246, 0.2)',
-            borderColor: 'rgba(139, 92, 246, 1)',
-            borderWidth: 2,
-            pointBackgroundColor: 'rgba(139, 92, 246, 1)',
+            backgroundColor: 'rgba(34, 197, 94, 0.15)',
+            borderColor: 'rgba(34, 197, 94, 0.8)',
+            borderWidth: 3,
+            pointBackgroundColor: 'rgba(34, 197, 94, 1)',
             pointBorderColor: '#fff',
+            pointBorderWidth: 2,
+            pointRadius: 5,
             pointHoverBackgroundColor: '#fff',
-            pointHoverBorderColor: 'rgba(139, 92, 246, 1)'
+            pointHoverBorderColor: 'rgba(34, 197, 94, 1)',
+            pointHoverBorderWidth: 3,
+            pointHoverRadius: 7
         }]
     };
 
@@ -205,17 +213,25 @@ function displayResults(analysis) {
         scales: {
             r: {
                 angleLines: {
-                    display: true
+                    display: true,
+                    color: 'rgba(156, 163, 175, 0.3)'
+                },
+                grid: {
+                    color: 'rgba(156, 163, 175, 0.2)'
                 },
                 suggestedMin: 0,
                 suggestedMax: 5,
                 ticks: {
-                    stepSize: 1
+                    stepSize: 1,
+                    color: 'rgba(107, 114, 128, 0.8)',
+                    backdropColor: 'transparent'
                 },
                 pointLabels: {
                     font: {
-                        size: 12
-                    }
+                        size: 12,
+                        weight: '500'
+                    },
+                    color: 'rgba(55, 65, 81, 0.9)'
                 }
             }
         }
@@ -263,7 +279,7 @@ function downloadCharts() {
     ctx.font = 'bold 24px Arial';
     ctx.fillStyle = '#1f2937';
     ctx.textAlign = 'center';
-    const title = currentUserName ? `${currentUserName}さんの分析結果` : 'Brain Function & Social Humanity Hexagraph';
+    const title = currentUserName ? `${currentUserName}の分析結果` : 'Brain Function & Social Humanity Hexagraph';
     ctx.fillText(title, tempCanvas.width / 2, 40);
     
     // 両方のチャートを並べて描画
