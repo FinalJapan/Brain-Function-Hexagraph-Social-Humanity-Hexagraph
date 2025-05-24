@@ -263,7 +263,7 @@ function downloadCharts() {
     ctx.font = 'bold 24px Arial';
     ctx.fillStyle = '#1f2937';
     ctx.textAlign = 'center';
-    const title = currentUserName ? `${currentUserName}の分析結果` : 'Brain Function & Social Humanity Hexagraph';
+    const title = currentUserName ? `${currentUserName}さんの分析結果` : 'Brain Function & Social Humanity Hexagraph';
     ctx.fillText(title, tempCanvas.width / 2, 40);
     
     // 両方のチャートを並べて描画
